@@ -1,0 +1,113 @@
+<!-- templates/add_expense.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Expense - Expense Tracker</title>
+</head>
+<style>
+    body {
+      background: rgb(34, 193, 195);
+      height: 140vh;
+      background: linear-gradient(
+        146deg,
+        rgba(34, 193, 195, 1) 0%,
+        rgba(253, 187, 45, 1) 100%
+      );
+    }
+    h1 {
+      align-self: center;
+      font-size: 3em;
+    }
+    .input{
+        background-color: transparent;
+        height: 10vh;
+        width: 20vw;
+        border: 2px solid black;
+        border-radius: 15px;
+
+
+    }
+    .button{
+            background-color: transparent;
+            border-radius: 15px;
+            border: 2px solid black;
+            transition: all ease 0.5s;
+            height: 10vh;
+            width: 15vw;
+            margin: 1em;
+            font-size: large;
+            font-weight: 500;
+        }
+        .button:hover{
+           box-shadow: 0px 0px 15px rgb(0, 242, 255);
+           background-color: black;
+           color: aqua;
+           border-color: aqua;
+        }
+    ::placeholder{
+        color: black;
+        align-self: center;
+        align-items: center;
+        align-content: center;
+    }
+    .input:focus{
+        background-color: black;
+        color: aqua;
+        border-color:aqua ;
+        box-shadow: 0px 0px 15px aqua;
+    }
+    .con{
+        width: fit-content;
+        display: flex;
+    }
+</style>
+<body>
+<center>
+    <h1>Add Expense</h1>
+
+</center>    <form action="/add_expense" method="POST">
+        <!-- Form fields for adding expense -->
+   
+<center>
+    <input type="text" class="input" id="username" name="username" placeholder="Username"><br><br>
+
+</center>        
+
+<center>
+    <input type="number" class="input" id="individual_expense" placeholder="Individual Expense" name="individual_expense" required><br><br>
+
+</center>        
+
+<center>
+    <input type="number" class="input" id="shared_expense" placeholder="Shared Expense" name="shared_expense" required><br><br>
+
+</center>        
+       <center>
+        <label for="shared_with">Shared With:</label>
+        <br>
+        <div class="con">
+            {% for user in users %}
+        <input type="checkbox" id="{{ user.username }}" name="shared_with" value="{{ user.username }}">
+        <label for="{{ user.username }}">{{ user.username }}</label><br>
+        {% endfor %}
+        </div>
+        
+       </center>
+ <center>
+    
+    <input type="number" class="input" id="cost" placeholder="Cost" name="cost" required><br><br>
+ </center>
+      <center>
+          
+        <input type="submit"  class="button" value="Add Expense">
+      </center>
+    </form>
+
+    <!-- Button to view expenses -->
+<center>
+    <button onclick="window.location.href='/expenses'" class="button">View Expenses</button>
+
+</center></body>
+</html>

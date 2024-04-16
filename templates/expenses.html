@@ -1,0 +1,83 @@
+<!-- templates/expenses.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker - Expenses</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            border-bottom: 1px solid #420b0b; /* Changed border color for consistency */
+            text-align: left;
+        }
+        th {
+            background-color: transparent;
+        }
+        table{
+            border: 2px solid black;
+        }
+        body {
+      background: rgb(34, 193, 195);
+      height: 100vh;
+      background: linear-gradient(
+        146deg,
+        rgba(34, 193, 195, 1) 0%,
+        rgba(253, 187, 45, 1) 100%
+      );
+    }
+    .button{
+            background-color: transparent;
+            border-radius: 15px;
+            border: 2px solid black;
+            transition: all ease 0.5s;
+            height: 15vh;
+            width: 20vw;
+            margin: 2em;
+            font-size: large;
+            font-weight: 500;
+        }
+        .button:hover{
+           box-shadow: 0px 0px 15px red;
+           background-color: black;
+           color: red;
+           border-color: red;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <h1>Expense Tracker - Expenses</h1>
+
+</center>    <form action="/delete_expenses" method="POST">
+        <table>
+            <tr>
+                <th>Settle</th> <!-- New column for checkboxes -->
+                <th>Name</th>
+                <th>Individual Expense</th>
+                <th>Shared Expense</th>
+                <th>Shared With</th>
+                <th>Cost</th>
+            </tr>
+            {% for expense in expenses %}
+            <tr>
+                <td><input type="checkbox" name="selected_expenses" value="{{ expense.username }}"></td>
+                <td>{{ expense.username }}</td>
+                <td>{{ expense.individual_expense }}</td>
+                <td>{{ expense.shared_expense }}</td>
+                <td>{{ expense.shared_with }}</td>
+                <td>{{ expense.cost }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+<center>
+    <button type="submit" class="button">Delete Selected Expenses</button>
+
+</center>    
+</form>
+</body>
+</html>

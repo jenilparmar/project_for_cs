@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+  </head>
+  <style>
+    body {
+      background: rgb(34, 193, 195);
+      height: 100vh;
+      background: linear-gradient(
+        146deg,
+        rgba(34, 193, 195, 1) 0%,
+        rgba(253, 187, 45, 1) 100%
+      );
+    }
+    h1 {
+      align-self: center;
+      font-size: 3em;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+    .input{
+        background-color: transparent;
+        height: 10vh;
+        width: 20vw;
+        border: 2px solid black;
+        border-radius: 15px;
+
+
+    }
+    .button{
+            background-color: transparent;
+            border-radius: 15px;
+            border: 2px solid black;
+            transition: all ease 0.5s;
+            height: 10vh;
+            width: 15vw;
+            font-size: large;
+            font-weight: 500;
+        }
+        .button:hover{
+           box-shadow: 0px 0px 15px rgb(0, 242, 255);
+           background-color: black;
+           color: aqua;
+           border-color: aqua;
+        }
+    ::placeholder{
+        color: black;
+        align-self: center;
+        align-items: center;
+        align-content: center;
+    }
+    .input:focus{
+        background-color: black;
+        color: aqua;
+        border-color:aqua ;
+        box-shadow: 0px 0px 15px aqua;
+    }
+  </style>
+  <body>
+    <center>
+      <h1>Signup</h1>
+    </center>
+    <form method="post">
+      
+<center>
+    <input type="text" id="username" name="username" placeholder="Username" class="input" required /><br />
+
+</center>    
+<center>
+    <input type="email" required id="email" class="input" name="email" placeholder="Email" /><br />
+
+</center>     
+      <center>
+        <input
+        type="password"
+        required
+        id="password"
+        name="password" class="input" placeholder="Password" /><br /><br />
+      </center>
+<center>
+    <input type="submit" class="button" value="Signup" />
+</center>
+    </form>
+  </body>
+</html>

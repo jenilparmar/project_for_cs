@@ -1,0 +1,59 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <style>
+        body{
+            background: rgb(34,193,195);
+            height: 100vh;
+background: linear-gradient(146deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+        }
+        h1{
+            font-size: 3em;
+        }
+        .button{
+            background-color: transparent;
+            border-radius: 15px;
+            border: 2px solid black;
+            transition: all ease 0.5s;
+            height: 15vh;
+            width: 15vw;
+            font-size: large;
+            font-weight: 500;
+        }
+        .button:hover{
+           box-shadow: 0px 0px 15px rgb(0, 242, 255);
+           background-color: black;
+           color: aqua;
+           border-color: aqua;
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+            align-self: center;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Expense Tracker</h1>
+    </center>
+    <center>
+        <div>
+            <center>
+                <button onclick="window.location.href='/signup'" class="button">Signup</button>
+            </center>
+            <center>
+                <button onclick="window.location.href='/add_expense'" class="button">Add Expenses</button>
+            </center>
+            <center>
+                <button onclick="window.location.href='/expenses'" class="button">View Expenses</button>
+            </center>
+        </div>
+    </center>
+</body>
+</html>
